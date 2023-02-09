@@ -3,6 +3,7 @@ public class EmployeeWageMain {
     public static final int EMP_RATE_PER_HOUR = 20;
     public static final int IS_PART_TIME = 2;
     public static final int NO_OF_WORKING_DAYS = 20;
+    public static final int NO_OF_WORKING_HOURS = 100;
     public static int empCheck(){   // Random checking employee attendance
         int empCheck = (int) Math.floor((Math.random() * 10) % 3);
         return empCheck;
@@ -10,7 +11,7 @@ public class EmployeeWageMain {
     public int dailyWageOfEmployee() {
         int empHrs = 0;
         int totalHrs = 0;
-        int dailyWage = 0;
+        int totalWage = 0;
         int totalWorkingDays = 0;
         while (totalWorkingDays < NO_OF_WORKING_DAYS) {
             totalWorkingDays++;
@@ -27,11 +28,12 @@ public class EmployeeWageMain {
         totalHrs+=empHrs;
         System.out.println("Day#: " + totalWorkingDays + " " + "Emp hr: " + totalHrs);
         }
-        return dailyWage;
+        totalWage = totalHrs * EMP_RATE_PER_HOUR;
+        return totalWage;
     }
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation");
         EmployeeWageMain employee = new EmployeeWageMain();
-        employee.dailyWageOfEmployee();
+        System.out.println("Total wage: " + employee.dailyWageOfEmployee());
     }
 }

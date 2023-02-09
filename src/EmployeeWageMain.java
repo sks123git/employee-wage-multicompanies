@@ -1,7 +1,7 @@
 public class EmployeeWageMain {
     public static final int IS_FULL_TIME = 1;
     public static final int EMP_RATE_PER_HOUR = 20;
-    public static int empCheck(){
+    public static int empCheck(){   // Random checking employee attendance
         int empCheck = (int) Math.floor((Math.random() * 10) % 3);
         return empCheck;
     }

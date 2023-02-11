@@ -1,35 +1,11 @@
 package com.companies;
 
-public class EmployeeWageMain {
-    public static final int IS_FULL_TIME = 1;
-    public static final int IS_PART_TIME = 2;
-
-    public static int empCheck(){   // Random checking employee attendance
-        int empCheck = (int) Math.floor((Math.random() * 10) % 3);
-        return empCheck;
+public class EmployeeWageMain extends Company {
+    public static void main(String[] args) {
+        System.out.println("Welcome to Employee Wage Computation");
+        EmployeeWageMain tataGroup = new EmployeeWageMain();
+        EmployeeWageMain birlaGroup = new EmployeeWageMain();
+        System.out.println("Total wage tata group: " + tataGroup.dailyWageOfEmployee(30,30,50));
+        System.out.println("Total wage birla group: " + birlaGroup.dailyWageOfEmployee(40,30,50));
     }
-    public int dailyWageOfEmployee(int ratePerHour, int workingDays, int workingHours) {
-        int empHrs = 0;
-        int totalHrs = 0;
-        int totalWage = 0;
-        int totalWorkingDays = 0;
-        while (totalWorkingDays < workingDays && totalWorkingDays < workingHours) {
-            totalWorkingDays++;
-        switch (empCheck()) {
-            case IS_PART_TIME: //checking if part time or not
-                empHrs = 4;
-                break;
-            case IS_FULL_TIME: //checking if full time or not
-                empHrs = 8;
-                break;
-            default:
-                empHrs = 0;
-        }
-        totalHrs+=empHrs;
-        System.out.println("Day#: " + totalWorkingDays + " " + "Emp hr: " + totalHrs);
-        }
-        totalWage = totalHrs * ratePerHour;
-        return totalWage;
-    }
-
 }
